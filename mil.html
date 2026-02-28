@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVW-94 Vipers</title>
+
+<link rel="icon" href="https://kephost.net/p/MjMwMzY0Mg.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#0d0d0d;
+color:#111;
+line-height:1.6;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+width:100%;
+background:rgba(0, 0, 0, 0);
+backdrop-filter:blur(6px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 25px;
+z-index:1000;
+transition:0.3s;
+}
+
+.navbar.scrolled{background:#111;}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:18px;
+font-weight:bold;
+font-size:14px;
+}
+
+.navbar a:hover{color:red;}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background-image:url("https://kephost.net/p/MjMwMzYwMg.png");
+background-size:cover;
+background-position:center center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+
+.hero h1{
+font-size:clamp(42px,10vw,100px);
+font-weight:900;
+text-shadow:2px 2px 15px rgba(0,0,0,0.7);
+}
+
+/* SECTIONS */
+
+.description-section{
+padding:100px 20px;
+display:flex;
+justify-content:center;
+align-items:center;
+background-size:cover;
+background-position:center;
+}
+
+.description-section{
+background-image:url("https://kephost.net/p/MjMwOTkyMw.png");
+}
+
+.section-card{
+max-width:900px;
+background:white;
+padding:40px 25px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+text-align:center;
+}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#111;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.button:hover{background:#333;}
+
+/* TEAM */
+
+.team-section{
+background:#111;
+padding:70px 15px;
+text-align:center;
+}
+
+.team-section h2{
+color:white;
+margin-bottom:30px;
+}
+
+.table-wrapper{
+overflow-x:auto;
+}
+
+.members-table{
+margin:0 auto;
+border-collapse:separate;
+border-spacing:0;
+width:400px;
+background:#1a1a1a;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 8px 20px rgba(0,0,0,0.6);
+}
+
+.members-table th,
+.members-table td{
+padding:14px 18px;
+color:white;
+text-align:left;
+}
+
+.members-table th{background:#272727;}
+.members-table tr:nth-child(even){background:#1f1f1f;}
+.members-table tr:hover{background:#333;}
+.members-table td{border-bottom:1px solid #444;}
+.members-table tr:last-child td{border-bottom:none;}
+
+/* GALLERY */
+
+.gallery-section{
+padding:70px 20px;
+background:#0d0d0d;
+text-align:center;
+}
+
+.gallery-section h2{
+color:white;
+margin-bottom:35px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.gallery-grid img{
+width:100%;
+border-radius:12px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.gallery-grid img:hover{transform:scale(1.05);}
+
+/* LIGHTBOX */
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+justify-content:center;
+align-items:center;
+z-index:2000;
+padding:20px;
+}
+
+#lightbox img{
+max-width:95%;
+max-height:80%;
+border-radius:10px;
+}
+
+.lightbox-arrow{
+position:absolute;
+top:50%;
+font-size:45px;
+color:white;
+cursor:pointer;
+user-select:none;
+transform:translateY(-50%);
+padding:15px;
+}
+
+#prev{left:10px;}
+#next{right:10px;}
+
+/* CONTACT */
+
+.contact-section{
+padding:70px 20px;
+background:#111;
+text-align:center;
+}
+
+.contact-section h2{
+color:white;
+margin-bottom:30px;
+}
+
+.contact-section p,
+.contact-section a{
+color:white;
+font-size:17px;
+text-decoration:none;
+}
+
+#copyText:hover,
+.dc:hover{
+color:red;
+text-decoration:underline;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:30px 15px;
+font-size:15px;
+}
+
+/* MOBILE NAV */
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:10px;
+padding:12px;
+}
+
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:10px;
+}
+
+.hero{
+height:85vh;
+}
+
+.section-card{
+padding:30px 18px;
+}
+
+.lightbox-arrow{
+font-size:35px;
+}
+
+}
+
+/* COPY POPUP */
+
+#copyPopup{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%) scale(0.8);
+background:#111;
+color:white;
+padding:12px 20px;
+border-radius:8px;
+font-weight:bold;
+opacity:0;
+pointer-events:none;
+transition:0.35s;
+z-index:3000;
+box-shadow:0 8px 20px rgba(0,0,0,0.5);
+}
+
+#copyPopup.show{
+opacity:1;
+transform:translateX(-50%) scale(1);
+}
+
+</style>
+</head>
+<div id="copyPopup">Copied!</div>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar" id="navbar">
+<div class="logo"><a href="index.html">Main Page</a></div>
+
+<div class="nav-links">
+<a href="mil.html">Military squadron</a>
+<a href="demo.html">SuperVipers</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+<h1>Military squadron</h1>
+</div>
+
+<hr color="black">
+
+<!-- DESCRIPTION -->
+<div class="description-section" id="description">
+<div class="section-card">
+<h2>The CVW-94 Vipers Military Squadron...</h2>
+<p>
+CVW-94 “Vipers”  A carrier wing holding many airframes, mainly playing a part in strategic strike operations.
+The Vipers also hold Air to Air aircraft and often engage in beyond visual range combat.
+</p>
+</div>
+</div>
+
+<hr color="black">
+
+<!-- TEAM -->
+<div class="team-section" id="team">
+<h2>Aircraft operated by CVW-94</h2>
+
+<div class="table-wrapper">
+<table class="members-table">
+<tr><th>Name</th><th>Callsign</th></tr>
+<tr><td>EF-24G</td><td>"Mischief"</td></tr>
+<tr><td>F-45</td><td>"Ghost"</td></tr>
+<tr><td>T-55</td><td>"Tyro"</td></tr>
+<tr><td>AH- 94</td><td>"Dragonfly"</td></tr>
+<tr><td>AV-42</td><td>"Kestrel"</td></tr>
+</table>
+</div>
+
+</div>
+
+<hr color="red">
+
+<!-- GALLERY -->
+<div class="gallery-section" id="gallery">
+<h2>Gallery</h2>
+
+<div class="gallery-grid">
+<img src="https://kephost.net/p/MjMwOTk2MA.png">
+<img src="https://kephost.net/p/MjMwOTk2Ng.png">
+<img src="https://kephost.net/p/MjMwOTk2NQ.png">
+<img src="https://kephost.net/p/MjMwOTk2Nw.png">
+</div>
+</div>
+
+<hr color="red">
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+<span id="prev" class="lightbox-arrow">&#10094;</span>
+<img id="lightbox-img">
+<span id="next" class="lightbox-arrow">&#10095;</span>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-section" id="contact">
+<h2>Contact</h2>
+
+<p style="text-decoration: underline;">
+<a class="dc" href="https://discord.gg/WwE6SefH5v">Discord server</a>
+</p>
+
+<p style="text-decoration: underline;">
+<span id="copyText" style="cursor:pointer;">Email (Click to copy)</span>
+</p>
+
+<p>Feel free to check out more of our stuff with the navigation bar on the top of the screen!</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+&copy; 2026 CVW-94 Vipers. All rights reserved. Made by Gery.
+</footer>
+
+<script>
+
+/* NAVBAR SCROLL */
+
+window.addEventListener("scroll",()=>{
+const navbar=document.getElementById("navbar");
+if(window.scrollY>50){navbar.classList.add("scrolled");}
+else{navbar.classList.remove("scrolled");}
+});
+
+/* COPY EMAIL */
+
+document.getElementById("copyText").addEventListener("click",()=>{
+
+const text="CVW-94 Vipersoffical@gmail.com";
+navigator.clipboard.writeText(text);
+
+const popup=document.getElementById("copyPopup");
+
+popup.classList.add("show");
+
+setTimeout(()=>{
+popup.classList.remove("show");
+},1500);
+
+});
+
+/* LIGHTBOX */
+
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
+const images=document.querySelectorAll(".gallery-grid img");
+
+let index=0;
+
+function showImage(i){
+index=i;
+lightbox.style.display="flex";
+lightboxImg.src=images[index].src;
+}
+
+images.forEach((img,i)=>{
+img.addEventListener("click",()=>showImage(i));
+});
+
+document.getElementById("prev").onclick=(e)=>{
+e.stopPropagation();
+index=(index-1+images.length)%images.length;
+lightboxImg.src=images[index].src;
+};
+
+document.getElementById("next").onclick=(e)=>{
+e.stopPropagation();
+index=(index+1)%images.length;
+lightboxImg.src=images[index].src;
+};
+
+lightbox.addEventListener("click",(e)=>{
+if(e.target===lightbox){lightbox.style.display="none";}
+});
+
+</script>
+
+</body>
+</html>
