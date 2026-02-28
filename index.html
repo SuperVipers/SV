@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SuperVipers VTOL</title>
+<title>CVW-94 Vipers</title>
 
 <link rel="icon" href="https://kephost.net/p/MjMwMzY0Mg.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
@@ -52,9 +52,9 @@ font-size:14px;
 height:100vh;
 background-image:url("https://kephost.net/p/MjMwMzYwMg.png");
 background-size:cover;
-background-position:center center; /* keeps same alignment */
+background-position:center center;
 background-repeat:no-repeat;
-background-attachment:fixed; /* keeps image locked while scrolling */
+background-attachment:fixed;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -71,8 +71,7 @@ text-shadow:2px 2px 15px rgba(0,0,0,0.7);
 
 /* SECTIONS */
 
-.description-section,
-.sop-section{
+.description-section{
 padding:100px 20px;
 display:flex;
 justify-content:center;
@@ -82,11 +81,7 @@ background-position:center;
 }
 
 .description-section{
-background-image:url("https://kephost.net/p/MjMwMzYyMg.png");
-}
-
-.sop-section{
-background-image:url("https://kephost.net/p/MjMwMzYzNA.png");
+background-image:url("https://kephost.net/p/MjMwOTkxNg.png");
 }
 
 .section-card{
@@ -182,39 +177,6 @@ transition:0.3s;
 }
 
 .gallery-grid img:hover{transform:scale(1.05);}
-
-/* LIGHTBOX */
-
-#lightbox{
-display:none;
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.9);
-justify-content:center;
-align-items:center;
-z-index:2000;
-padding:20px;
-}
-
-#lightbox img{
-max-width:95%;
-max-height:80%;
-border-radius:10px;
-}
-
-.lightbox-arrow{
-position:absolute;
-top:50%;
-font-size:45px;
-color:white;
-cursor:pointer;
-user-select:none;
-transform:translateY(-50%);
-padding:15px;
-}
 
 #prev{left:10px;}
 #next{right:10px;}
@@ -317,20 +279,18 @@ transform:translateX(-50%) scale(1);
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
-<div class="logo"><a href="#">SuperVipers</a></div>
+<div class="logo"><a href="index.html">Main Page</a></div>
 
 <div class="nav-links">
-<a href="#description">About</a>
-<a href="#sop">SOP</a>
-<a href="#team">Team</a>
-<a href="#gallery">Gallery</a>
+<a href="mil.html">Military squadron</a>
+<a href="demo.html">SuperVipers</a>
 <a href="#contact">Contact</a>
 </div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>SuperVipers</h1>
+<h1>CVW-94 Vipers</h1>
 </div>
 
 <hr color="black">
@@ -338,84 +298,35 @@ transform:translateX(-50%) scale(1);
 <!-- DESCRIPTION -->
 <div class="description-section" id="description">
 <div class="section-card">
-<h2>The SuperVipers Flight Team...</h2>
+<h2>The CVW-94 Vipers Team...</h2>
 <p>
-The SuperVipers are the official demonstration team of the CVW-94 “Vipers”, showing both the skills and coordination we train our pilots to have. 
-The SuperVipers work alongside many other teams to make every flight or show a great and memorable experience.
+Formed in early 2025, The Vipers hub is a home base for both CVW-94 and the SuperVipers.
+Holding public events and special training events, this is where every new member starts there journey weather it be formations or combat.
 </p>
 </div>
 </div>
 
-<hr color="black">
-
-<!-- SOP -->
-<div class="sop-section" id="sop">
-<div class="section-card">
-<a href="SOP.pdf" class="button">Open our maneuver list</a>
-</div>
-</div>
-
-<hr color="black">
-
-<!-- TEAM -->
-<div class="team-section" id="team">
-<h2>Team Members</h2>
-
-<div class="table-wrapper">
-<table class="members-table">
-<tr><th>#</th><th>Name</th></tr>
-<tr><td>1</td><td>VALVRYN "Compass"</td></tr>
-<tr><td>2</td><td>Gery "Gamble"</td></tr>
-<tr><td>3</td><td>Prociten "Spade"</td></tr>
-<tr><td>4</td><td>Vix "Vapor"</td></tr>
-<tr><td>5</td><td>Jaxson "Tech"</td></tr>
-<tr><td>6</td><td>SamSarah "N/A"</td></tr>
-</table>
-</div>
-
-</div>
-
 <hr color="red">
-
-<!-- GALLERY -->
-<div class="gallery-section" id="gallery">
-<h2>Gallery</h2>
-
-<div class="gallery-grid">
-<img src="https://kephost.net/p/MjMwMzYzNg.png">
-<img src="https://kephost.net/p/MjMwMzYzNw.png">
-<img src="https://kephost.net/p/MjMwMzYzOA.png">
-<img src="https://kephost.net/p/MjMwMzYzOQ.png">
-</div>
-</div>
-
-<hr color="red">
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-<span id="prev" class="lightbox-arrow">&#10094;</span>
-<img id="lightbox-img">
-<span id="next" class="lightbox-arrow">&#10095;</span>
-</div>
 
 <!-- CONTACT -->
 <div class="contact-section" id="contact">
 <h2>Contact</h2>
 
 <p style="text-decoration: underline;">
-<a class="dc" href="https://discord.gg/uvkYDMrDH5">Discord server</a>
+<a class="dc" href="https://discord.gg/WwE6SefH5v">Discord server</a>
 </p>
 
 <p style="text-decoration: underline;">
 <span id="copyText" style="cursor:pointer;">Email (Click to copy)</span>
 </p>
 
-<p>Team leader's discord: "valvryn55"</p>
+<p>Feel free to check out more of our stuff with the navigation bar on the top of the screen!</p>
+
 </div>
 
 <!-- FOOTER -->
 <footer>
-&copy; 2026 SuperVipers. All rights reserved. Made by Gery.
+&copy; 2026 CVW-94 Vipers. All rights reserved. Made by Gery.
 </footer>
 
 <script>
@@ -432,7 +343,7 @@ else{navbar.classList.remove("scrolled");}
 
 document.getElementById("copyText").addEventListener("click",()=>{
 
-const text="supervipersoffical@gmail.com";
+const text="CVW-94 Vipersoffical@gmail.com";
 navigator.clipboard.writeText(text);
 
 const popup=document.getElementById("copyPopup");
@@ -444,41 +355,6 @@ popup.classList.remove("show");
 },1500);
 
 });
-
-/* LIGHTBOX */
-
-const lightbox=document.getElementById("lightbox");
-const lightboxImg=document.getElementById("lightbox-img");
-const images=document.querySelectorAll(".gallery-grid img");
-
-let index=0;
-
-function showImage(i){
-index=i;
-lightbox.style.display="flex";
-lightboxImg.src=images[index].src;
-}
-
-images.forEach((img,i)=>{
-img.addEventListener("click",()=>showImage(i));
-});
-
-document.getElementById("prev").onclick=(e)=>{
-e.stopPropagation();
-index=(index-1+images.length)%images.length;
-lightboxImg.src=images[index].src;
-};
-
-document.getElementById("next").onclick=(e)=>{
-e.stopPropagation();
-index=(index+1)%images.length;
-lightboxImg.src=images[index].src;
-};
-
-lightbox.addEventListener("click",(e)=>{
-if(e.target===lightbox){lightbox.style.display="none";}
-});
-
 </script>
 
 </body>
