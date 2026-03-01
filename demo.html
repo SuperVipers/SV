@@ -11,6 +11,7 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:'Montserrat',sans-serif;
@@ -42,9 +43,27 @@ text-decoration:none;
 margin-left:18px;
 font-weight:bold;
 font-size:14px;
+transition:0.2s;
 }
 
-.navbar a:hover{color:red;}
+.navbar a:hover,
+.navbar a.active{color:red;}
+
+/* BUTTON */
+
+.button{
+display:inline-block;
+margin-top:25px;
+padding:14px 28px;
+background:#111;
+color:white;
+text-decoration:none;
+font-weight:bold;
+border-radius:6px;
+transition:0.3s;
+}
+
+.button:hover{background:#333;}
 
 /* HERO */
 
@@ -52,7 +71,7 @@ font-size:14px;
 height:100vh;
 background-image:url("https://kephost.net/p/MjMwMzYwMg.png");
 background-size:cover;
-background-position:center center;
+background-position:center;
 background-repeat:no-repeat;
 background-attachment:fixed;
 display:flex;
@@ -67,6 +86,16 @@ padding:20px;
 font-size:clamp(42px,10vw,100px);
 font-weight:900;
 text-shadow:2px 2px 15px rgba(0,0,0,0.7);
+opacity:0;
+transform:translateY(30px);
+animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 /* SECTIONS */
@@ -98,21 +127,18 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 text-align:center;
 }
 
-/* BUTTON */
+/* FADE IN */
 
-.button{
-display:inline-block;
-margin-top:25px;
-padding:14px 28px;
-background:#111;
-color:white;
-text-decoration:none;
-font-weight:bold;
-border-radius:6px;
-transition:0.3s;
+.fade-section{
+opacity:0;
+transform:translateY(40px);
+transition:0.8s ease;
 }
 
-.button:hover{background:#333;}
+.fade-section.show{
+opacity:1;
+transform:translateY(0);
+}
 
 /* TEAM */
 
@@ -127,9 +153,7 @@ color:white;
 margin-bottom:30px;
 }
 
-.table-wrapper{
-overflow-x:auto;
-}
+.table-wrapper{overflow-x:auto;}
 
 .members-table{
 margin:0 auto;
@@ -179,6 +203,13 @@ width:100%;
 border-radius:12px;
 cursor:pointer;
 transition:0.3s;
+opacity:0;
+transform:scale(0.95);
+}
+
+.gallery-grid img.show{
+opacity:1;
+transform:scale(1);
 }
 
 .gallery-grid img:hover{transform:scale(1.05);}
@@ -219,6 +250,23 @@ padding:15px;
 #prev{left:10px;}
 #next{right:10px;}
 
+/* BACK TO TOP */
+
+#topBtn{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#111;
+color:white;
+border:none;
+padding:10px 14px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+display:none;
+z-index:2000;
+}
+
 /* CONTACT */
 
 .contact-section{
@@ -255,7 +303,7 @@ padding:30px 15px;
 font-size:15px;
 }
 
-/* MOBILE NAV */
+/* MOBILE */
 
 @media(max-width:768px){
 
@@ -272,21 +320,11 @@ justify-content:center;
 gap:10px;
 }
 
-.hero{
-height:85vh;
-}
-
-.section-card{
-padding:30px 18px;
-}
-
-.lightbox-arrow{
-font-size:35px;
-}
+.hero{height:85vh;}
+.section-card{padding:30px 18px;}
+.lightbox-arrow{font-size:35px;}
 
 }
-
-/* COPY POPUP */
 
 #copyPopup{
 position:fixed;
@@ -312,13 +350,15 @@ transform:translateX(-50%) scale(1);
 
 </style>
 </head>
-<div id="copyPopup">Copied!</div>
+
 <body>
+
+<div id="copyPopup">Copied!</div>
+<button id="topBtn">↑</button>
 
 <!-- NAVBAR -->
 <div class="navbar" id="navbar">
 <div class="logo"><a href="index.html">Main Page</a></div>
-
 <div class="nav-links">
 <a href="mil.html">CVW-94</a>
 <a href="demo.html">SuperVipers</a>
@@ -331,34 +371,27 @@ transform:translateX(-50%) scale(1);
 <h1>SuperVipers</h1>
 </div>
 
-<hr color="black">
-
 <!-- DESCRIPTION -->
-<div class="description-section" id="description">
+<div class="description-section fade-section" id="description">
 <div class="section-card">
-<h2>The SuperVipers Flight Team...</h2>
+<h2>The SuperVipers Flight Team</h2>
 <p>
-The SuperVipers are the official demonstration team of the CVW-94 “Vipers”, showing both the skills and coordination we train our pilots to have. 
-The SuperVipers work alongside many other teams to make every flight or show a great and memorable experience.
+The SuperVipers are the official demonstration team of the CVW-94 “Vipers”, showcasing the skill and coordination our pilots train to achieve.
+They work alongside other teams to make every flight or show a memorable experience.
 </p>
 </div>
 </div>
 
-<hr color="black">
-
 <!-- SOP -->
-<div class="sop-section" id="sop">
+<div class="sop-section fade-section" id="sop">
 <div class="section-card">
 <a href="SOP.pdf" class="button">Open our maneuver list</a>
 </div>
 </div>
 
-<hr color="black">
-
 <!-- TEAM -->
-<div class="team-section" id="team">
+<div class="team-section fade-section" id="team">
 <h2>Team Members</h2>
-
 <div class="table-wrapper">
 <table class="members-table">
 <tr><th>#</th><th>Name</th></tr>
@@ -366,20 +399,16 @@ The SuperVipers work alongside many other teams to make every flight or show a g
 <tr><td>2</td><td>Gery "Gamble"</td></tr>
 <tr><td>3</td><td>Prociten "Spade"</td></tr>
 <tr><td>4</td><td>Vix "Vapor"</td></tr>
-<tr><th></th><th>Duo team</th></tr>
+<tr><th></th><th>Duo Team</th></tr>
 <tr><td>5</td><td>Jaxson "Tech"</td></tr>
 <tr><td>6</td><td>Millercrash "N/A"</td></tr>
 </table>
 </div>
-
 </div>
 
-<hr color="red">
-
 <!-- GALLERY -->
-<div class="gallery-section" id="gallery">
+<div class="gallery-section fade-section" id="gallery">
 <h2>Gallery</h2>
-
 <div class="gallery-grid">
 <img src="https://kephost.net/p/MjMwMzYzNg.png">
 <img src="https://kephost.net/p/MjMwMzYzNw.png">
@@ -387,8 +416,6 @@ The SuperVipers work alongside many other teams to make every flight or show a g
 <img src="https://kephost.net/p/MjMwMzYzOQ.png">
 </div>
 </div>
-
-<hr color="red">
 
 <!-- LIGHTBOX -->
 <div id="lightbox">
@@ -398,54 +425,56 @@ The SuperVipers work alongside many other teams to make every flight or show a g
 </div>
 
 <!-- CONTACT -->
-<div class="contact-section" id="contact">
+<div class="contact-section fade-section" id="contact">
 <h2>Contact</h2>
-
-<p style="text-decoration: underline;">
-<a class="dc" href="https://discord.gg/WwE6SefH5v">Discord server</a>
-</p>
-
-<p style="text-decoration: underline;">
-<span id="copyText" style="cursor:pointer;">Email (Click to copy)</span>
-</p>
-
-<p>Feel free to check out more of our stuff with the navigation bar on the top of the screen!</p>
-
+<p><a class="dc" href="https://discord.gg/WwE6SefH5v" style="cursor:pointer; text-decoration: underline;">Discord server</a></p>
+<p><span id="copyText" style="cursor:pointer; text-decoration: underline;">Email (Click to copy)</span></p>
+<p>Feel free to check out more of our stuff with the navigation bar above!</p>
 </div>
 
-<!-- FOOTER -->
 <footer>
 &copy; 2026 CVW-94. All rights reserved. Made by Gery.
 </footer>
 
 <script>
 
-/* NAVBAR SCROLL */
+const navbar=document.getElementById("navbar");
+const topBtn=document.getElementById("topBtn");
 
 window.addEventListener("scroll",()=>{
-const navbar=document.getElementById("navbar");
-if(window.scrollY>50){navbar.classList.add("scrolled");}
-else{navbar.classList.remove("scrolled");}
+
+if(window.scrollY>50){
+navbar.classList.add("scrolled");
+topBtn.style.display="block";
+}else{
+navbar.classList.remove("scrolled");
+topBtn.style.display="none";
+}
+
+document.querySelectorAll(".fade-section").forEach(section=>{
+const rect=section.getBoundingClientRect();
+if(rect.top<window.innerHeight-100){
+section.classList.add("show");
+}
 });
 
-/* COPY EMAIL */
+document.querySelectorAll(".gallery-grid img").forEach(img=>{
+const rect=img.getBoundingClientRect();
+if(rect.top<window.innerHeight-50){
+img.classList.add("show");
+}
+});
+
+});
+
+topBtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
 document.getElementById("copyText").addEventListener("click",()=>{
-
-const text="supervipersoffical@gmail.com";
-navigator.clipboard.writeText(text);
-
+navigator.clipboard.writeText("supervipersofficial@gmail.com");
 const popup=document.getElementById("copyPopup");
-
 popup.classList.add("show");
-
-setTimeout(()=>{
-popup.classList.remove("show");
-},1500);
-
+setTimeout(()=>popup.classList.remove("show"),1500);
 });
-
-/* LIGHTBOX */
 
 const lightbox=document.getElementById("lightbox");
 const lightboxImg=document.getElementById("lightbox-img");
@@ -476,7 +505,15 @@ lightboxImg.src=images[index].src;
 };
 
 lightbox.addEventListener("click",(e)=>{
-if(e.target===lightbox){lightbox.style.display="none";}
+if(e.target===lightbox) lightbox.style.display="none";
+});
+
+document.addEventListener("keydown",(e)=>{
+if(lightbox.style.display==="flex"){
+if(e.key==="ArrowRight") document.getElementById("next").click();
+if(e.key==="ArrowLeft") document.getElementById("prev").click();
+if(e.key==="Escape") lightbox.style.display="none";
+}
 });
 
 </script>
