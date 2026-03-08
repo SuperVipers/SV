@@ -118,6 +118,13 @@ background-image:url(sv1.jpg);
 background-image:url(sv2.jpg);
 }
 
+/* TEAM SECTION UPDATED */
+.team-section{
+padding:100px 20px;
+background:#111;
+text-align:center;
+}
+
 .section-card{
 max-width:900px;
 background:white;
@@ -125,6 +132,20 @@ padding:40px 25px;
 border-radius:12px;
 box-shadow:0 10px 30px rgba(0,0,0,0.3);
 text-align:center;
+}
+
+.section-card h2{
+margin-bottom:15px;
+}
+
+.section-card h2::after{
+content:"";
+display:block;
+width:60px;
+height:3px;
+background:red;
+margin:12px auto 0;
+border-radius:2px;
 }
 
 /* FADE IN */
@@ -140,44 +161,51 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* TEAM */
-
-.team-section{
-background:#111;
-padding:70px 15px;
-text-align:center;
-}
-
-.team-section h2{
-color:white;
-margin-bottom:30px;
-}
-
-.table-wrapper{overflow-x:auto;}
-
-.members-table{
+.team-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1000px;
 margin:0 auto;
-border-collapse:separate;
-border-spacing:0;
-width:400px;
+}
+
+.member-card{
 background:#1a1a1a;
 border-radius:12px;
-overflow:hidden;
+padding:25px 20px;
+text-align:center;
 box-shadow:0 8px 20px rgba(0,0,0,0.6);
+transition:0.3s;
 }
 
-.members-table th,
-.members-table td{
-padding:14px 18px;
+.member-card:hover{
+background:#222;
+}
+
+.member-card img{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:15px;
+border:3px solid #333;
+}
+
+.member-card h3{
 color:white;
-text-align:left;
+margin-bottom:6px;
 }
 
-.members-table th{background:#272727;}
-.members-table tr:nth-child(even){background:#1f1f1f;}
-.members-table tr:hover{background:#333;}
-.members-table td{border-bottom:1px solid #444;}
-.members-table tr:last-child td{border-bottom:none;}
+.member-role{
+color:#bbb;
+font-size:14px;
+margin-bottom:10px;
+}
+
+.member-card p{
+color:#ccc;
+font-size:14px;
+}
 
 /* GALLERY */
 
@@ -362,7 +390,7 @@ transform:translateX(-50%) scale(1);
 <div class="nav-links">
 <a href="mil.html">CVW-94</a>
 <a href="demo.html">SuperVipers</a>
-<a href="#contact">Contact</a>
+<a href="start.html">Getting Started</a>
 </div>
 </div>
 
@@ -391,18 +419,52 @@ They work alongside other teams to make every flight or show a memorable experie
 
 <!-- TEAM -->
 <div class="team-section fade-section" id="team">
-<h2>Team Members</h2>
-<div class="table-wrapper">
-<table class="members-table">
-<tr><th>#</th><th>Name</th></tr>
-<tr><td>1</td><td>VALVRYN "Compass"</td></tr>
-<tr><td>2</td><td>Gery "Gamble"</td></tr>
-<tr><td>3</td><td>Prociten "Spade"</td></tr>
-<tr><td>4</td><td>Vix "Vapor"</td></tr>
-<tr><th></th><th>Duo Team</th></tr>
-<tr><td>5</td><td>Jaxson "Tech"</td></tr>
-<tr><td>6</td><td>Millercrash "N/A"</td></tr>
-</table>
+<h2 style="color: white; margin-bottom: 30px;">Team Members</h2>
+
+<div class="team-grid">
+
+<div class="member-card">
+<img src="val.jpg">
+<h3>VALVRYN <br> <i>"Compass"</i></h3>
+<div class="member-role">Lead Pilot</div>
+<p>Founder and lead pilot of the SuperVipers demonstration team. Callsign comes from his inability to tell apart directions.</p>
+</div>
+
+<div class="member-card">
+<img src="gery.jpg">
+<h3>Gery <br> <i>"Gamble"</i></h3>
+<div class="member-role">Pilot</div>
+<p>Part of the main diamond team and our newest member. Callsign comes from lead taking the "Gamble" to put him into an airshow without much practice.</p>
+</div>
+
+<div class="member-card">
+<img src="pro.jpg">
+<h3>Prociten <br> <i>"Spade"</i></h3>
+<div class="member-role">Pilot</div>
+<p>N/A</p>
+</div>
+
+<div class="member-card">
+<img src="vix.jpg">
+<h3>Vix <br> <i>"Vapor"</i></h3>
+<div class="member-role">Pilot</div>
+<p>N/A</p>
+</div>
+
+<div class="member-card">
+<img src="jaxson.jpg">
+<h3>Jaxson <br> <i>"Tech"</i></h3>
+<div class="member-role">Duo leader</div>
+<p>The youngest member of the SuperVipers proving that even younger pilots have potential. Leader of the duo. Callsign comes from his often faulty equipment.</p>
+</div>
+
+<div class="member-card">
+<img src="miller.jpg">
+<h3>Millercrash <br> <i>"N/A"</i></h3>
+<div class="member-role">Duo Team</div>
+<p>Duo formation specialist for close maneuvers.</p>
+</div>
+
 </div>
 </div>
 
