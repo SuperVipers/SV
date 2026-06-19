@@ -100,22 +100,23 @@ transform:translateY(0);
 
 /* SECTIONS */
 
+/* DESCRIPTION + SOP SHARED BACKGROUND */
+
+.vipers-bg{
+    background-image:url(sv1.jpg);
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:scroll;
+}
+
 .description-section,
 .sop-section{
-padding:100px 20px;
-display:flex;
-justify-content:center;
-align-items:center;
-background-size:cover;
-background-position:center;
-}
-
-.description-section{
-background-image:url(sv1.jpg);
-}
-
-.sop-section{
-background-image:url(sv2.jpg);
+    padding:100px 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:transparent;
 }
 
 /* TEAM SECTION UPDATED */
@@ -399,22 +400,26 @@ transform:translateX(-50%) scale(1);
 <h1>SuperVipers</h1>
 </div>
 
-<!-- DESCRIPTION -->
-<div class="description-section fade-section" id="description">
-<div class="section-card">
-<h2>The SuperVipers Flight Team</h2>
-<p>
-The SuperVipers are the official demonstration team of the CVW-94 “Vipers”, showcasing the skill and coordination our pilots train to achieve.
-They work alongside other teams to make every flight or show a memorable experience.
-</p>
-</div>
-</div>
+<div class="vipers-bg">
 
-<!-- SOP -->
-<div class="sop-section fade-section" id="sop">
-<div class="section-card">
-<a href="SOP.pdf" class="button">Open our maneuver list</a>
-</div>
+    <!-- DESCRIPTION -->
+    <div class="description-section fade-section" id="description">
+        <div class="section-card">
+            <h2>The SuperVipers Flight Team</h2>
+            <p>
+                The SuperVipers are the official demonstration team of the CVW-94 “Vipers”, showcasing the skill and coordination our pilots train to achieve.
+                They work alongside other teams to make every flight or show a memorable experience.
+            </p>
+        </div>
+    </div>
+
+    <!-- SOP -->
+    <div class="sop-section fade-section" id="sop">
+        <div class="section-card">
+            <a href="SOP.pdf" class="button">Open our maneuver list</a>
+        </div>
+    </div>
+
 </div>
 
 <!-- TEAM -->
@@ -433,35 +438,49 @@ They work alongside other teams to make every flight or show a memorable experie
 <div class="member-card">
 <img src="gery.jpg">
 <h3>Gery <br> <i>"Gamble"</i></h3>
-<div class="member-role">Pilot #2</div>
+<div class="member-role">Left wing</div>
 <p>Part of the main diamond team and our newest member. Callsign comes from lead taking the "Gamble" to put him into an airshow without much practice.</p>
 </div>
 
 <div class="member-card">
-<img src="pro.jpg">
-<h3>Prociten <br> <i>"N/A"</i></h3>
-<div class="member-role">Pilot #3</div>
+<img src="vix.jpg">
+<h3>Vix <br> <i>"Vapor"</i></h3>
+<div class="member-role">Right wing</div>
+<p>Part of the main diamond as right wing since December 10, 2025. Call sign comes from a very old profile picture that had vapor on the wings.</p>
+</div>
+
+<div class="member-card">
+<img src="mc.jpg">
+<h3>McDizzCrew <br> <i>"AWACS"</i></h3>
+<div class="member-role">Slot</div>
 <p>N/A</p>
 </div>
 
 <div class="member-card">
-<img src="vix.jpg">
-<h3>Vix <br> <i>"N/A"</i></h3>
-<div class="member-role">Pilot #4</div>
+<img src="scarlet.jpg">
+<h3>Scarlet <br> <i>"Slingshot"</i></h3>
+<div class="member-role">Duo lead</div>
+<p>unc</p>
+</div>
+
+<div class="member-card">
+<img src="pro.jpg">
+<h3>Prociten <br> <i>"Shake"</i></h3>
+<div class="member-role">Duo wingman</div>
 <p>N/A</p>
 </div>
 
 <div class="member-card">
 <img src="jaxson.jpg">
 <h3>Jaxson <br> <i>"Tech"</i></h3>
-<div class="member-role">Duo leader</div>
-<p>The youngest member of the SuperVipers proving that even younger pilots have potential. Leader of the duo. Callsign comes from his often faulty equipment.</p>
+<div class="member-role">Reserve</div>
+<p>The youngest member of the SuperVipers proving that even younger pilots have potential. Duo lead reserve. Callsign comes from his often faulty equipment.</p>
 </div>
 
 <div class="member-card">
-<img src="miller.jpg">
-<h3>Millercrash <br> <i>"N/A"</i></h3>
-<div class="member-role">Duo Team</div>
+<img src="nory.jpg">
+<h3>Nory <br> <i>"Risky"</i></h3>
+<div class="member-role">Reserve</div>
 <p>N/A</p>
 </div>
 
